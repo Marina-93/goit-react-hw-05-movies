@@ -1,0 +1,11 @@
+.input {
+  margin: 15px;
+}
+
+.search-btn {
+  display: inline-block;
+  height: 20px;
+  border-radius: 5px;
+  margin: 8px 17px;
+  text-align: center;
+}

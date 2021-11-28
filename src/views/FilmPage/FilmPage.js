@@ -2,9 +2,14 @@ import axios from "axios";
 import { lazy, Suspense, useState, useEffect } from "react";
 import { RingLoader } from "react-spinners";
 import { useParams, Link, Route, Routes, useNavigate, useLocation } from 'react-router-dom';
-import Actors from "../Actors/Actors";
-import Reviews from "../Reviews/Reviews";
 import "./Film.mod.css";
+
+const Actors = lazy(() =>
+  import("../Actors/Actors" /*webpackChunkName: "case" */)
+);
+const Reviews = lazy(() =>
+  import("../Reviews/Reviews" /*webpackChunkName: "reviews" */)
+);
 
 export default function FilmPage() {
     const { filmId } = useParams();
@@ -47,10 +52,12 @@ export default function FilmPage() {
                 <li><Link to={`reviews`}>Reviews</Link></li>
             </ul>
 
+            <Suspense fallback={<RingLoader size={120}/>}>
             <Routes>
                 <Route path="cast" element={<Actors />} />
                 <Route path="reviews" element={<Reviews />} />
             </Routes>
+            </Suspense>
         </>
     )
 }

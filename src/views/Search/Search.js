@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './Search.mod.css';
 
 export default function Search ({ onSubmit }) {
     const [value, setValue] = useState('');
@@ -29,7 +30,7 @@ export default function Search ({ onSubmit }) {
                     onChange={handleChange}
                     placeholder="Search movies"
                 />
-                <button type="submit"> Search </button>
+                <button className="search-btn" type="submit"> Search </button>
             </form>
         </>
     )

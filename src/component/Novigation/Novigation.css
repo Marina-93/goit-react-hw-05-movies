@@ -1,0 +1,21 @@
+.line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+
+.nav {
+  display: block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: #2a363b;
+  font-size: 18px;
+}
+
+.activ {
+  color: red;
+}

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Search from "../Search/Search";
+import './Movies.mod.css';
 
 export default function Movies() {
     const [value, setValue] = useState('');
@@ -25,12 +26,12 @@ export default function Movies() {
     },[value])
     
     return (
-        <div>
+        <div className="movies-contaner">
             <Search onSubmit={handleFormSubmit}></Search>
             {films && films.map((film) => {
                     return (
-                    <li key={film.id} >
-                            <Link to={`/movies/${film.id}`} state={{ from: location }}>{film.title ? film.title : film.name}</Link>
+                    <li className="movies-list" key={film.id} >
+                            <Link className="link" to={`/movies/${film.id}`} state={{ from: location }}>{film.title ? film.title : film.name}</Link>
                     </li>
                 )
             })}

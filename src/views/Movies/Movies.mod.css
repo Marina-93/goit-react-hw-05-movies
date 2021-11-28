@@ -1,15 +1,15 @@
-.home-title {
-  margin-left: 80px;
-}
-
-.link {
-  text-decoration: none;
-}
-
-.home-list {
+.movies-list {
   list-style: none;
   display: block;
   width: fit-content;
   padding: 5px;
   margin-left: 20px;
+}
+
+.movies-contaner {
+  margin-left: 20px;
+}
+
+.link {
+  text-decoration: none;
 }

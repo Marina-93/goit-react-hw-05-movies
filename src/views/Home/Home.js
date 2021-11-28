@@ -17,12 +17,12 @@ export default function Home() {
     
     return (
         <div>
-            <h2>Tranding Today</h2>
+            <h2 className="home-title">Tranding Today</h2>
             <ul>
                 {films && films.map((film) => {
                     return (
-                    <li key={film.id} className="home-link">
-                        <Link to={`/movies/${film.id}`} state={{ from: location }}>{film.title ? film.title : film.name}</Link>
+                    <li key={film.id} className="home-list">
+                        <Link className="link" to={`/movies/${film.id}`} state={{ from: location }}>{film.title ? film.title : film.name}</Link>
                     </li>
                 )
             })}

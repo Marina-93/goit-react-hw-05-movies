@@ -3,9 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { RingLoader } from "react-spinners";
 import AppBar from './component/AppBar/AppBar';
 
-function App() {
-  const Home = lazy(() =>
-  import("./views/Home/Home" /*webpackChunkName: "home-page" */)
+const Home = lazy(() =>
+  import("./views/Home/Home" /*webpackChunkName: "home" */)
 );
 const Movies = lazy(() =>
   import("./views/Movies/Movies" /*webpackChunkName: "movies" */)
@@ -18,12 +17,13 @@ const FilmPage = lazy(() =>
 const NotFoundView = lazy(() =>
   import("./views/NotFoundView/NotFoundView" /*webpackChunkName: "error-page" */)
 );
-  
+
+function App() {
   return (
     <>
       <AppBar />
       
-      <Suspense fallback={<RingLoader />}>
+      <Suspense fallback={<RingLoader size={120}/>}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
