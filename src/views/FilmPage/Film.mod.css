@@ -1,0 +1,24 @@
+.film-btn {
+  display: inline-block;
+  height: 20px;
+  border-radius: 5px;
+  margin: 8px 17px;
+  text-align: center;
+}
+
+.film-conteiner {
+  display: flex;
+}
+
+.film-img {
+  width: 200px;
+}
+
+.film-card {
+  display: block;
+  margin-left: 20px;
+}
+
+.film-genre {
+  list-style: none;
+}
