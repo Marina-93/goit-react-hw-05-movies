@@ -1,11 +1,12 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import './Search.mod.css';
 
 export default function Search ({ onSubmit }) {
     const [value, setValue] = useState('');
 
     const handleChange = e => {
-        setValue(e.target.value)
+        setValue(e.target.value);
     }
 
     const handleSubmit = e => {
@@ -15,8 +16,8 @@ export default function Search ({ onSubmit }) {
             return;
         }
         
-        onSubmit(value)
-        setValue('')
+        onSubmit(value);
+        setValue('');
     }
 
     return (
@@ -35,3 +36,7 @@ export default function Search ({ onSubmit }) {
         </>
     )
 }
+
+Search.propTypes = {
+  onSubmit: PropTypes.func,
+};
